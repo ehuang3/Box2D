@@ -200,7 +200,7 @@ public:
 	void ShiftOrigin(const b2Vec2& newOrigin);
 
 	/// Get the contact manager for testing.
-	const b2ContactManager& GetContactManager() const;
+	b2ContactManager& GetContactManager();
 
 	/// Get the current profile.
 	const b2Profile& GetProfile() const;
@@ -341,7 +341,7 @@ inline bool b2World::GetAutoClearForces() const
 	return (m_flags & e_clearForces) == e_clearForces;
 }
 
-inline const b2ContactManager& b2World::GetContactManager() const
+inline b2ContactManager& b2World::GetContactManager()
 {
 	return m_contactManager;
 }
